@@ -11,5 +11,9 @@ class Command(BaseCommand):
 
 	def run(self, args):
 		uproject = unrealtoolkit.ubt.get_uproject()
+		if uproject == None:
+			print("No uproject file found")
+			exit()
+
 		print(uproject.info['EngineAssociation'])
 		
